@@ -5,7 +5,7 @@ require_relative "lib/graphql_graceful/version"
 Gem::Specification.new do |spec|
   spec.name          = "graphql_graceful"
   spec.version       = GraphqlGraceful::VERSION
-  spec.authors       = ["Sergio9999"]
+  spec.authors       = ["SobolevSerhii"]
   spec.email         = ["sobolevsergeysom@gmail.com"]
 
   spec.summary       = "Gem based on graphql, but has a laconic structure of base gem files"

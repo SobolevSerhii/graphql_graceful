@@ -1,8 +1,7 @@
 module GraphqlGraceful
   module Services
     module Base
-      class Relay
-        include ::GraphqlGraceful::Services::Context
+      class Relay < GraphQL::Schema::RelayClassicMutation
       end
     end
   end

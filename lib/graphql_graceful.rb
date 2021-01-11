@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "graphql"
+
 require_relative "graphql_graceful/version"
 require_relative "graphql_graceful/services/context"
 require_relative "graphql_graceful/services/base/input_object"
@@ -28,15 +30,15 @@ module GraphqlGraceful
   ].freeze
   class << self
     def reload!
-      Dir[File.join("lib", "graphql_graceful", "**", "**.rb")].each { |file| require file }
+      Dir[File.join("lib", "graphql_graceful", "**", "**.rb")].sort.each { |file| load file }
     end
 
     def reload_services!
-      Dir[File.join("lib", "graphql_graceful", "services", "**", "**.rb")].each { |file| require file }
+      Dir[File.join("lib", "graphql_graceful", "services", "**", "**.rb")].sort.each { |file| load file }
     end
 
     def reload_base_classes!
-      Dir[File.join("lib", "graphql_graceful", "services", "base", "**.rb")].each { |file| require file }
+      Dir[File.join("lib", "graphql_graceful", "services", "base", "**.rb")].sort.each { |file| load file }
     end
   end
 

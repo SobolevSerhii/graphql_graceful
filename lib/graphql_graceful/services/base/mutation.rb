@@ -1,4 +1,4 @@
 module GraphqlGraceful::Services::Base
-  class Mutation
+  class Mutation 
   end
 end
